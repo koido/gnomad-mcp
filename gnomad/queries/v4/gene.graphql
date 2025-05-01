@@ -1,0 +1,6 @@
+query gene($gene_symbol: String, $gene_id: String, $reference_genome: ReferenceGenomeId!) {
+  gene(gene_symbol: $gene_symbol, gene_id: $gene_id, reference_genome: $reference_genome) {
+    gene_id
+    symbol
+  }
+}

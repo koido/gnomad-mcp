@@ -1,0 +1,345 @@
+query transcript($transcript_id: String!, $reference_genome: ReferenceGenomeId!) {
+    transcript(transcript_id: $transcript_id, reference_genome: $reference_genome) {
+    reference_genome
+    transcript_id
+    transcript_version
+    chrom
+    start
+    stop
+    exons {
+      feature_type
+      start
+      stop
+    }
+    strand
+    gene_id
+    gene {
+      reference_genome
+      gene_id
+      gene_version
+      symbol
+      hgnc_id
+      ncbi_id
+      omim_id
+      name
+      chrom
+      start
+      stop
+      strand
+      exons
+      canonical_transcript_id
+      transcripts {
+        reference_genome
+        transcript_id
+        transcript_version
+        chrom
+        start
+        stop
+        exons
+        strand
+        gtex_tissue_expression {
+          tissue
+          value
+        }
+      }
+      mane_select_transcript {
+        ensembl_id
+        ensembl_version
+        refseq_id
+        refseq_version
+      }
+      flags
+      pext {
+        regions {
+          start
+          stop
+          mean
+          tissues {
+            tissue
+            value
+          }
+        }
+        flags
+      }
+      gnomad_constraint {
+        exp_lof
+        exp_mis
+        exp_syn
+        obs_lof
+        obs_mis
+        obs_syn
+        oe_lof
+        oe_lof_lower
+        oe_lof_upper
+        oe_mis
+        oe_mis_lower
+        oe_mis_upper
+        oe_syn
+        oe_syn_lower
+        oe_syn_upper
+        lof_z
+        mis_z
+        syn_z
+        pli
+        flags
+        pLI
+      }
+      exac_constraint {
+        exp_syn
+        exp_mis
+        exp_lof
+        obs_syn
+        obs_mis
+        obs_lof
+        mu_syn
+        mu_mis
+        mu_lof
+        syn_z
+        mis_z
+        lof_z
+        pli
+        pLI
+      }
+      exac_regional_missense_constraint_regions {
+        start
+        stop
+        obs_mis
+        exp_mis
+        obs_exp
+        chisq_diff_null
+      }
+    }
+    gtex_tissue_expression
+    gnomad_constraint
+    exac_constraint
+    variants {
+      variant_id
+      reference_genome
+      chrom
+      pos
+      ref
+      alt
+      rsids
+      exome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+          homozygote_count
+          hemizygote_count
+          ac_hom
+          ac_hemi
+        }
+        faf95 {
+          popmax
+          popmax_population
+        }
+        fafmax {
+          faf95_max
+          faf95_max_gen_anc
+          faf99_max
+          faf99_max_gen_anc
+        }
+        flags
+        af
+        ac_hom
+        ac_hemi
+      }
+      genome
+      joint {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations
+        fafmax
+      }
+      flags
+      lof_curation {
+        verdict
+        flags
+      }
+      transcript_consequence {
+        consequence_terms
+        domains
+        gene_id
+        gene_version
+        gene_symbol
+        hgvs
+        hgvsc
+        hgvsp
+        is_canonical
+        is_mane_select
+        is_mane_select_version
+        lof
+        lof_flags
+        lof_filter
+        major_consequence
+        polyphen_prediction
+        refseq_id
+        refseq_version
+        sift_prediction
+        transcript_id
+        transcript_version
+        canonical
+      }
+      faf95_joint
+      faf99_joint
+      in_silico_predictors {
+        id
+        value
+        flags
+      }
+      rsid
+      variantId
+      consequence
+      consequence_in_canonical_transcript
+      domains
+      gene_id
+      gene_symbol
+      transcript_id
+      transcript_version
+      hgvsc
+      hgvsp
+      lof
+      lof_filter
+      lof_flags
+      hgvs
+      va {
+        exome {
+          id
+          type
+          label
+          derivedFrom {
+            id
+            type
+            label
+            version
+          }
+          focusAllele {
+            _id
+            type
+            location {
+              _id
+              type
+              sequence_id
+              interval {
+                type
+                start {
+                  type
+                  value
+                }
+                end
+              }
+            }
+            state {
+              type
+              sequence
+            }
+          }
+          focusAlleleCount
+          locusAlleleCount
+          alleleFrequency
+          cohort {
+            id
+            label
+            characteristics {
+              name
+              value
+            }
+          }
+          ancillaryResults {
+            grpMaxFAF95 {
+              frequency
+              confidenceInterval
+              groupId
+            }
+            jointGrpMaxFAF95
+            homozygotes
+            hemizygotes
+          }
+          subcohortFrequency
+        }
+        genome
+      }
+      vrs
+    }
+    mitochondrial_variants {
+      ac_het
+      ac_hom
+      an
+      consequence
+      filters
+      flags
+      gene_id
+      gene_symbol
+      transcript_id
+      hgvsc
+      hgvsp
+      lof
+      lof_filter
+      lof_flags
+      max_heteroplasmy
+      pos
+      reference_genome
+      rsid
+      rsids
+      variant_id
+    }
+    clinvar_variants {
+      variant_id
+      reference_genome
+      chrom
+      pos
+      ref
+      alt
+      clinical_significance
+      clinvar_variation_id
+      gnomad {
+        exome {
+          ac
+          an
+          filters
+        }
+        genome
+      }
+      gold_stars
+      hgvsc
+      hgvsp
+      in_gnomad
+      major_consequence
+      review_status
+      transcript_id
+    }
+    coverage {
+      exome {
+        pos
+        mean
+        median
+        over_1
+        over_5
+        over_10
+        over_15
+        over_20
+        over_25
+        over_30
+        over_50
+        over_100
+      }
+      genome
+    }
+    mitochondrial_coverage {
+      pos
+      mean
+      median
+      over_100
+      over_1000
+    }
+    }
+}

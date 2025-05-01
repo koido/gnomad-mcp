@@ -1,0 +1,95 @@
+query gene($gene_id: String, $gene_name: String, $reference_genome: ReferenceGenomeId!, $dataset: DatasetId!) {
+    gene(gene_id: $gene_id, gene_name: $gene_name, reference_genome: $reference_genome, dataset: $dataset) {
+    gene_id
+    name
+    canonical_transcript
+    chrom
+    start
+    stop
+    exons {
+      feature_type
+      start
+      stop
+    }
+    transcripts {
+      transcript_id
+      transcript_version
+      chrom
+      start
+      stop
+      exons
+      strand
+    }
+    flags
+    gnomad_constraint {
+      exp_lof
+      exp_mis
+      exp_syn
+      obs_lof
+      obs_mis
+      obs_syn
+      oe_lof
+      oe_lof_lower
+      oe_lof_upper
+      oe_mis
+      oe_mis_lower
+      oe_mis_upper
+      oe_syn
+      oe_syn_lower
+      oe_syn_upper
+      lof_z
+      mis_z
+      syn_z
+      pli
+      flags
+      pLI
+    }
+    exac_constraint {
+      exp_syn
+      exp_mis
+      exp_lof
+      obs_syn
+      obs_mis
+      obs_lof
+      mu_syn
+      mu_mis
+      mu_lof
+      syn_z
+      mis_z
+      lof_z
+      pli
+      pLI
+    }
+    variants {
+      variant_id
+      chrom
+      pos
+      ref
+      alt
+      exome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+        }
+      }
+      genome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+        }
+      }
+    }
+    }
+}

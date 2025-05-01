@@ -1,0 +1,46 @@
+# Python related
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Test related
+.pytest_cache/
+.coverage
+htmlcov/
+tests/output/
+
+# Environment related
+.venv/
+.env
+.python-version
+
+# Package managers
+.uv/
+
+# Editors
+.vscode/
+.idea/
+.cursor/
+
+# OS related
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+dist/
+build/
+
+# Virtual environments
+venv/
+ENV/
+
+# Archive directory
+/archive/
+
+# Temp files
+*.tmp
+*.log

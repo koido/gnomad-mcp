@@ -1,0 +1,15 @@
+# NOT IMPLEMENTED IN v4: variant_cooccurrence is not supported in gnomAD v4 API.
+# query variant_cooccurrence($variants: [String!]!, $dataset: DatasetId!) {
+#   variant_cooccurrence(variants: $variants, dataset: $dataset) {
+#     variant_ids
+#     genotype_counts
+#     haplotype_counts
+#     p_compound_heterozygous
+#     populations {
+#       id
+#       genotype_counts
+#       haplotype_counts
+#       p_compound_heterozygous
+#     }
+#   }
+# }

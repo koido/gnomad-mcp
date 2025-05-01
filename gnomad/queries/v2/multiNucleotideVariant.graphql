@@ -1,0 +1,50 @@
+query multiNucleotideVariant($variant_id: String!, $dataset: DatasetId!) {
+    multiNucleotideVariant(variant_id: $variant_id, dataset: $dataset) {
+    variant_id
+    reference_genome
+    chrom
+    pos
+    ref
+    alt
+    constituent_snvs {
+      variant_id
+      exome {
+        ac
+        an
+        filters
+      }
+      genome {
+        ac
+      }
+    }
+    exome {
+      ac
+      ac_hom
+      n_individuals
+    }
+    genome {
+      ac
+    }
+    consequences {
+      gene_id
+      gene_name
+      transcript_id
+      category
+      amino_acids
+      codons
+      consequence
+      snv_consequences {
+        variant_id
+        amino_acids
+        codons
+        consequence
+      }
+    }
+    related_mnvs {
+      combined_variant_id
+      changes_amino_acids
+      n_individuals
+      other_constituent_snvs
+    }
+    }
+}

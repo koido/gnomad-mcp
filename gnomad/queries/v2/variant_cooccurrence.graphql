@@ -1,0 +1,14 @@
+query variant_cooccurrence($variants: [String!]!, $dataset: DatasetId!) {
+    variant_cooccurrence(variants: $variants, dataset: $dataset) {
+    variant_ids
+    genotype_counts
+    haplotype_counts
+    p_compound_heterozygous
+    populations {
+      id
+      genotype_counts
+      haplotype_counts
+      p_compound_heterozygous
+    }
+    }
+}

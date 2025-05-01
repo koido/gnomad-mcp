@@ -1,0 +1,7 @@
+# NOT IMPLEMENTED IN v4: short_tandem_repeats is not supported in gnomAD v4 API.
+# query short_tandem_repeats($dataset: DatasetId!) {
+#   short_tandem_repeats(dataset: $dataset) {
+#     id
+#     ...
+#   }
+# }

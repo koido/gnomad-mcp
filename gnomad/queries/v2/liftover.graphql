@@ -1,0 +1,13 @@
+query liftover($source_variant_id: String, $liftover_variant_id: String, $reference_genome: ReferenceGenomeId!) {
+    liftover(source_variant_id: $source_variant_id, liftover_variant_id: $liftover_variant_id, reference_genome: $reference_genome) {
+    source {
+      variant_id
+      reference_genome
+    }
+    liftover {
+      variant_id
+      reference_genome
+    }
+    datasets
+    }
+}

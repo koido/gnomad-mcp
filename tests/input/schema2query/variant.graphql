@@ -1,0 +1,9 @@
+query variant($variantId: String, $rsid: String, $vrsId: String, $dataset: DatasetId!) {
+    variant(variantId: $variantId, rsid: $rsid, vrsId: $vrsId, dataset: $dataset) {
+    variant_id
+    chrom
+    pos
+    ref
+    alt
+  }
+}

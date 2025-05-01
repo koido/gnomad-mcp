@@ -1,0 +1,41 @@
+query short_tandem_repeat($id: String!, $dataset: DatasetId!) {
+    short_tandem_repeat(id: $id, dataset: $dataset) {
+    id
+    gene {
+      ensembl_id
+      symbol
+      region
+    }
+    associated_diseases {
+      name
+      symbol
+      omim_id
+      inheritance_mode
+      repeat_size_classifications {
+        classification
+        min
+        max
+      }
+      notes
+    }
+    stripy_id
+    strchive_id
+    main_reference_region {
+      reference_genome
+      chrom
+      start
+      stop
+    }
+    reference_regions {
+      reference_genome
+      chrom
+      start
+      stop
+    }
+    reference_repeat_unit
+    repeat_units {
+      repeat_unit
+      classification
+    }
+    }
+}

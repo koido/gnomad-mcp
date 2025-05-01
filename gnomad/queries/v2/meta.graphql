@@ -1,0 +1,5 @@
+query meta {
+    meta {
+    clinvar_release_date
+    }
+}

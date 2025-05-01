@@ -1,0 +1,76 @@
+query structural_variant($variantId: String!, $dataset: StructuralVariantDatasetId!) {
+    structural_variant(variantId: $variantId, dataset: $dataset) {
+    age_distribution {
+      het {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+      hom {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+    }
+    algorithms
+    alts
+    ac
+    an
+    af
+    homozygote_count
+    hemizygote_count
+    chrom
+    chrom2
+    major_consequence
+    consequences {
+      consequence
+      genes
+    }
+    copy_numbers {
+      copy_number
+      ac
+    }
+    cpx_intervals
+    cpx_type
+    end
+    end2
+    evidence
+    filters
+    genes
+    genotype_quality {
+      all {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+      alt {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+    }
+    length
+    populations {
+      id
+      ac
+      an
+      homozygote_count
+      hemizygote_count
+      ac_hemi
+      ac_hom
+    }
+    pos
+    pos2
+    qual
+    reference_genome
+    type
+    variant_id
+    consequence
+    ac_hom
+    ac_hemi
+    }
+}

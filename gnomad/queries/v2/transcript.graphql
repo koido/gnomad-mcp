@@ -1,0 +1,65 @@
+query transcript($transcript_id: String!, $reference_genome: ReferenceGenomeId!, $dataset: DatasetId!) {
+    transcript(transcript_id: $transcript_id, reference_genome: $reference_genome, dataset: $dataset) {
+    transcript_id
+    transcript_version
+    chrom
+    start
+    stop
+    exons {
+      feature_type
+      start
+      stop
+    }
+    strand
+    gene_id
+    gene {
+      gene_id
+      name
+      chrom
+      start
+      stop
+      exons {
+        feature_type
+        start
+        stop
+      }
+      transcripts {
+        transcript_id
+        start
+        stop
+        exons
+      }
+    }
+    variants {
+      variant_id
+      chrom
+      pos
+      ref
+      alt
+      exome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+        }
+      }
+      genome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+        }
+      }
+    }
+    }
+}

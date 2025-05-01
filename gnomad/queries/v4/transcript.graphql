@@ -1,0 +1,11 @@
+# NOT IMPLEMENTED IN v4: transcript is not supported in gnomAD v4 API due to API-side error/null handling.
+# query transcript($transcript_id: String!, $reference_genome: ReferenceGenomeId!) {
+#   transcript(transcript_id: $transcript_id, reference_genome: $reference_genome) {
+#     transcript_id
+#     gene_id
+#     gene {
+#       gene_id
+#       symbol
+#     }
+#   }
+# }

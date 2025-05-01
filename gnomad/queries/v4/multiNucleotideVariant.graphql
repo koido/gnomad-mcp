@@ -1,0 +1,6 @@
+# NOT IMPLEMENTED IN v4: multiNucleotideVariant is not supported in gnomAD v4 API.
+# query multiNucleotideVariant($variant_id: String!, $dataset: DatasetId!) {
+#   multiNucleotideVariant(variant_id: $variant_id, dataset: $dataset) {
+#     id
+#   }
+# }

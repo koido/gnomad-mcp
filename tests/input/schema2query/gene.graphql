@@ -1,0 +1,446 @@
+query gene($gene_id: String, $gene_symbol: String, $reference_genome: ReferenceGenomeId!) {
+    gene(gene_id: $gene_id, gene_symbol: $gene_symbol, reference_genome: $reference_genome) {
+    reference_genome
+    gene_id
+    gene_version
+    symbol
+    gencode_symbol
+    hgnc_id
+    ncbi_id
+    omim_id
+    name
+    chrom
+    start
+    stop
+    strand
+    exons {
+      feature_type
+      start
+      stop
+    }
+    transcripts {
+      reference_genome
+      transcript_id
+      transcript_version
+      chrom
+      start
+      stop
+      exons
+      strand
+      gtex_tissue_expression {
+        tissue
+        value
+      }
+    }
+    canonical_transcript_id
+    mane_select_transcript {
+      ensembl_id
+      ensembl_version
+      refseq_id
+      refseq_version
+    }
+    flags
+    pext {
+      regions {
+        start
+        stop
+        mean
+        tissues {
+          tissue
+          value
+        }
+      }
+      flags
+    }
+    gnomad_constraint {
+      exp_lof
+      exp_mis
+      exp_syn
+      obs_lof
+      obs_mis
+      obs_syn
+      oe_lof
+      oe_lof_lower
+      oe_lof_upper
+      oe_mis
+      oe_mis_lower
+      oe_mis_upper
+      oe_syn
+      oe_syn_lower
+      oe_syn_upper
+      lof_z
+      mis_z
+      syn_z
+      pli
+      flags
+      pLI
+    }
+    gnomad_v2_regional_missense_constraint {
+      has_no_rmc_evidence
+      passed_qc
+      regions {
+        chrom
+        start
+        stop
+        aa_start
+        aa_stop
+        obs_mis
+        exp_mis
+        obs_exp
+        chisq_diff_null
+        p_value
+      }
+    }
+    exac_constraint {
+      exp_syn
+      exp_mis
+      exp_lof
+      obs_syn
+      obs_mis
+      obs_lof
+      mu_syn
+      mu_mis
+      mu_lof
+      syn_z
+      mis_z
+      lof_z
+      pli
+      pLI
+    }
+    exac_regional_missense_constraint_regions {
+      start
+      stop
+      obs_mis
+      exp_mis
+      obs_exp
+      chisq_diff_null
+    }
+    mitochondrial_constraint
+    mitochondrial_missense_constraint_regions {
+      start
+      stop
+      oe
+      oe_upper
+      oe_lower
+    }
+    variants {
+      variant_id
+      reference_genome
+      chrom
+      pos
+      ref
+      alt
+      rsids
+      exome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+          homozygote_count
+          hemizygote_count
+          ac_hom
+          ac_hemi
+        }
+        faf95 {
+          popmax
+          popmax_population
+        }
+        fafmax {
+          faf95_max
+          faf95_max_gen_anc
+          faf99_max
+          faf99_max_gen_anc
+        }
+        flags
+        af
+        ac_hom
+        ac_hemi
+      }
+      genome
+      joint {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations
+        fafmax
+      }
+      flags
+      lof_curation {
+        verdict
+        flags
+      }
+      transcript_consequence {
+        consequence_terms
+        domains
+        gene_id
+        gene_version
+        gene_symbol
+        hgvs
+        hgvsc
+        hgvsp
+        is_canonical
+        is_mane_select
+        is_mane_select_version
+        lof
+        lof_flags
+        lof_filter
+        major_consequence
+        polyphen_prediction
+        refseq_id
+        refseq_version
+        sift_prediction
+        transcript_id
+        transcript_version
+        canonical
+      }
+      faf95_joint
+      faf99_joint
+      in_silico_predictors {
+        id
+        value
+        flags
+      }
+      rsid
+      variantId
+      consequence
+      consequence_in_canonical_transcript
+      domains
+      gene_id
+      gene_symbol
+      transcript_id
+      transcript_version
+      hgvsc
+      hgvsp
+      lof
+      lof_filter
+      lof_flags
+      hgvs
+      va {
+        exome {
+          id
+          type
+          label
+          derivedFrom {
+            id
+            type
+            label
+            version
+          }
+          focusAllele {
+            _id
+            type
+            location {
+              _id
+              type
+              sequence_id
+              interval {
+                type
+                start {
+                  type
+                  value
+                }
+                end
+              }
+            }
+            state {
+              type
+              sequence
+            }
+          }
+          focusAlleleCount
+          locusAlleleCount
+          alleleFrequency
+          cohort {
+            id
+            label
+            characteristics {
+              name
+              value
+            }
+          }
+          ancillaryResults {
+            grpMaxFAF95 {
+              frequency
+              confidenceInterval
+              groupId
+            }
+            jointGrpMaxFAF95
+            homozygotes
+            hemizygotes
+          }
+          subcohortFrequency
+        }
+        genome
+      }
+      vrs
+    }
+    structural_variants {
+      ac
+      an
+      af
+      homozygote_count
+      hemizygote_count
+      reference_genome
+      chrom
+      chrom2
+      end
+      end2
+      major_consequence
+      filters
+      length
+      pos
+      pos2
+      type
+      variant_id
+      consequence
+      ac_hom
+      ac_hemi
+    }
+    mitochondrial_variants {
+      ac_het
+      ac_hom
+      an
+      consequence
+      filters
+      flags
+      gene_id
+      gene_symbol
+      transcript_id
+      hgvsc
+      hgvsp
+      lof
+      lof_filter
+      lof_flags
+      max_heteroplasmy
+      pos
+      reference_genome
+      rsid
+      rsids
+      variant_id
+    }
+    clinvar_variants {
+      variant_id
+      reference_genome
+      chrom
+      pos
+      ref
+      alt
+      clinical_significance
+      clinvar_variation_id
+      gnomad {
+        exome {
+          ac
+          an
+          filters
+        }
+        genome
+      }
+      gold_stars
+      hgvsc
+      hgvsp
+      in_gnomad
+      major_consequence
+      review_status
+      transcript_id
+    }
+    coverage {
+      exome {
+        pos
+        mean
+        median
+        over_1
+        over_5
+        over_10
+        over_15
+        over_20
+        over_25
+        over_30
+        over_50
+        over_100
+      }
+      genome
+    }
+    mitochondrial_coverage {
+      pos
+      mean
+      median
+      over_100
+      over_1000
+    }
+    cnv_track_callable_coverage {
+      xpos
+      percent_callable
+    }
+    short_tandem_repeats {
+      id
+      gene {
+        ensembl_id
+        symbol
+        region
+      }
+      associated_diseases {
+        name
+        symbol
+        omim_id
+        inheritance_mode
+        repeat_size_classifications {
+          classification
+          min
+          max
+        }
+        notes
+      }
+      stripy_id
+      strchive_id
+      main_reference_region {
+        reference_genome
+        chrom
+        start
+        stop
+      }
+      reference_regions
+      reference_repeat_unit
+    }
+    heterozygous_variant_cooccurrence_counts {
+      csq
+      af_cutoff
+      data {
+        in_cis
+        in_trans
+        unphased
+        two_het_total
+      }
+    }
+    homozygous_variant_cooccurrence_counts {
+      csq
+      af_cutoff
+      data {
+        hom_total
+      }
+    }
+    copy_number_variants {
+      sc
+      sn
+      sf
+      reference_genome
+      chrom
+      end
+      filters
+      length
+      pos
+      type
+      posmin
+      posmax
+      endmin
+      endmax
+      variant_id
+    }
+    }
+}

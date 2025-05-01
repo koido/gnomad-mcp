@@ -1,0 +1,55 @@
+query region($chrom: String!, $start: Int!, $stop: Int!, $reference_genome: ReferenceGenomeId!, $dataset: DatasetId!) {
+    region(chrom: $chrom, start: $start, stop: $stop, reference_genome: $reference_genome, dataset: $dataset) {
+    chrom
+    start
+    stop
+    genes {
+      gene_id
+      name
+      start
+      stop
+      exons {
+        feature_type
+        start
+        stop
+      }
+      transcripts {
+        transcript_id
+        start
+        stop
+        exons
+      }
+    }
+    variants {
+      variant_id
+      chrom
+      pos
+      ref
+      alt
+      exome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+        }
+      }
+      genome {
+        ac
+        an
+        homozygote_count
+        hemizygote_count
+        filters
+        populations {
+          id
+          ac
+          an
+        }
+      }
+    }
+    }
+}

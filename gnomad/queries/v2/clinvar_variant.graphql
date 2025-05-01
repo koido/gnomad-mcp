@@ -1,0 +1,39 @@
+query clinvar_variant($variant_id: String!, $reference_genome: ReferenceGenomeId!) {
+    clinvar_variant(variant_id: $variant_id, reference_genome: $reference_genome) {
+    variant_id
+    reference_genome
+    chrom
+    pos
+    ref
+    alt
+    clinical_significance
+    clinvar_variation_id
+    gnomad {
+      exome {
+        ac
+        an
+        filters
+      }
+      genome {
+        ac
+        an
+        filters
+      }
+    }
+    gold_stars
+    in_gnomad
+    last_evaluated
+    review_status
+    rsid
+    submissions {
+      clinical_significance
+      last_evaluated
+      review_status
+      submitter_name
+      conditions {
+        name
+        medgen_id
+      }
+    }
+    }
+}

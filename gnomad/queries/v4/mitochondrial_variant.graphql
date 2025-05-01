@@ -1,0 +1,116 @@
+query mitochondrial_variant($variant_id: String, $dataset: DatasetId!) {
+    mitochondrial_variant(variant_id: $variant_id, dataset: $dataset) {
+    ac_het
+    ac_hom
+    ac_hom_mnv
+    age_distribution {
+      het {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+      hom {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+    }
+    alt
+    an
+    excluded_ac
+    filters
+    flags
+    genotype_quality_metrics {
+      name
+      all {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+      alt {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+    }
+    genotype_quality_filters {
+      name
+      filtered {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+    }
+    haplogroup_defining
+    haplogroups {
+      id
+      an
+      ac_het
+      ac_hom
+      faf
+      faf_hom
+    }
+    heteroplasmy_distribution {
+      bin_edges
+      bin_freq
+      n_larger
+      n_smaller
+    }
+    max_heteroplasmy
+    mitotip_score
+    mitotip_trna_prediction
+    pon_ml_probability_of_pathogenicity
+    pon_mt_trna_prediction
+    populations {
+      id
+      an
+      ac_het
+      ac_hom
+      heteroplasmy_distribution {
+        bin_edges
+        bin_freq
+        n_larger
+        n_smaller
+      }
+    }
+    pos
+    ref
+    reference_genome
+    rsid
+    rsids
+    site_quality_metrics {
+      name
+      value
+    }
+    transcript_consequences {
+      consequence_terms
+      domains
+      gene_id
+      gene_version
+      gene_symbol
+      hgvs
+      hgvsc
+      hgvsp
+      is_canonical
+      is_mane_select
+      is_mane_select_version
+      lof
+      lof_flags
+      lof_filter
+      major_consequence
+      polyphen_prediction
+      refseq_id
+      refseq_version
+      sift_prediction
+      transcript_id
+      transcript_version
+      canonical
+    }
+    variant_id
+    }
+}
