@@ -5,6 +5,12 @@
 This MCP server provides a programmatic interface to the Genome Aggregation Database ([gnomAD](https://gnomad.broadinstitute.org/)) API, supporting multiple API versions (**v2.1.1**, **v3.1.2**, **v4.1.0**).  
 It abstracts version-specific field and schema differences, exposing a unified API for downstream tools and users.
 
+## Status
+
+🚧 **Under Active Development** 🚧
+
+This project is under active development. APIs and features may change without notice.
+
 ## Supported gnomAD API Versions
 
 - **v4.1.0** (`gnomad_r4`)
