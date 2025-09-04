@@ -9,8 +9,8 @@ mcp = FastMCP("gnomAD MCP Server")
 def get_gene_info(
     gene_id: Optional[str] = None,
     gene_symbol: Optional[str] = None,
-    dataset = 'gnomad_r4',
-    reference_genome = 'GRCh38'
+    dataset: str = 'gnomad_r4',
+    reference_genome: str = 'GRCh38'
 ) -> dict:
     """
     [gnomAD API] Retrieve gene information (v4 only)
@@ -67,7 +67,7 @@ def get_region_info(
     chrom: str,
     start: int,
     stop: int,
-    dataset = 'gnomad_r4'
+    dataset: str = 'gnomad_r4'
 ) -> dict:
     """
     [gnomAD API] Retrieve region information (v4 only)
@@ -147,7 +147,7 @@ def get_clinvar_variant_info(
 def get_mitochondrial_variant_info(
     reference_genome: str,
     variant_id: str,
-    dataset = 'gnomad_r4'
+    dataset: str = 'gnomad_r4'
 ) -> dict:
     """
     [gnomAD API] Retrieve mitochondrial variant info (v4 only)
@@ -199,7 +199,7 @@ def get_structural_variant_info(
 def get_copy_number_variant_info(
     reference_genome: str,
     variantId: str,
-    dataset = 'gnomad_cnv_r4'
+    dataset: str = 'gnomad_cnv_r4'
 ) -> dict:
     """
     [gnomAD API] Retrieve copy number variant info (v4 only)
@@ -250,7 +250,7 @@ def search_for_variants(
 def get_str_info(
     reference_genome: str,
     id: str,
-    dataset = 'gnomad_r4'
+    dataset: str = 'gnomad_r4'
 ) -> dict:
     """
     [gnomAD API] Retrieve STR info (v4 only)
@@ -279,7 +279,7 @@ def get_variant_liftover(
     reference_genome: str,
     source_variant_id: Optional[str] = None,
     liftover_variant_id: Optional[str] = None,
-    dataset = 'gnomad_r2_1'
+    dataset: str = 'gnomad_r2_1'
 ) -> dict:
     """
     [gnomAD API] Retrieve liftover info (v2 only)
